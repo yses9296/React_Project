@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './App.css';
+import Contact from './Contact';
 
 class App extends Component {
   constructor(props){
@@ -10,12 +12,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello React This is New World</h1>
-        <h2>{this.state.name}</h2>
-
-        <button onClick={ () => {this.setState({name: 'Eunseo'})}}>
-          Click Me
-        </button>
+        <Contact></Contact>
       </div>
     )
   }

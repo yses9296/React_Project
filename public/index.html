@@ -5,9 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React App</title>
+    <style>
+        * {margin: 0; padding: 0;}
+
+        .header {
+            width: 100%; 
+            height: 100px;
+            background-color: beige;
+            font-size: 30px;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .app {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div class="main">
+        <div class="header">
+            <h1>React Tutorial</h1>
+        </div>
+
+        <div id="root" class="app"></div>
+    </div>
     <script src="bundle.js"></script>
 </body>
 </html>
