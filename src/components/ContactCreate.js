@@ -16,7 +16,15 @@ export default class ContactCreate extends Component {
         this.setState(nextState)
     }
     handleClick(){
-        
+        const contact = {
+            name: this.state.name,
+            phone: this.state.phone
+        };
+        this.props.onCreate(contact);
+        this.setState({
+            name: '',
+            phone: ''
+        })
     }
 
     render() {
@@ -26,9 +34,17 @@ export default class ContactCreate extends Component {
             <p>
                 <input type="text" name="name" placeholder='Name' value={this.state.name} onChange={this.handleChnage}></input>
                 <input type="text" name="phone" placeholder='Phone' value={this.state.phone} onChange={this.handleChnage}></input>
-                <button>Create</button>
+                <button onClick={this.handleClick}>Create</button>
             </p>
         </div>
         )
     }
+}
+
+
+ContactCreate.propTypes = {
+    onCreate : React.PropTypes.func
+}
+ContactCreate.defaultProps = {
+    onCreate: () => {console.error('onCreate not defined')}
 }

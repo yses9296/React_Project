@@ -90,7 +90,7 @@ export default class Contact extends Component {
                     isSelected={this.state.selectedKey != -1}
                     contact = {this.state.contactData[this.state.selectedKey]}>
                 </ContactDetails>
-                <ContactCreate></ContactCreate>
+                <ContactCreate onCreate={this.handleCreate}></ContactCreate>
             </div>
         );
     }
