@@ -46,6 +46,7 @@ export default class Contact extends Component {
         if(JSON.stringify(prevProps.contactData) != JSON.stringify(this.state.contactData)){ 
             //이전 값과 지금 값이 다르다면, localStorage에 지금 값을 저장하도록.
             localStorage.contactData = JSON.stringify(this.state.contactData);
+            //localStorage.clear() >> 초기화
         }
     }
 
