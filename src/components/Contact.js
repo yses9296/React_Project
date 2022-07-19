@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ContactInfo from './ContactInfo';
 import ContactDetails from './ContactDetails';
 import ContactCreate from './ContactCreate';
+
 import update from 'react-addons-update';
 
 export default class Contact extends Component {
@@ -30,6 +31,22 @@ export default class Contact extends Component {
         this.handleCreate = this.handleCreate.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
+    }
+
+    componentWillMount() {
+        //localStorage
+        const contactData = localStorage.contactData;
+        if(contactData){
+            this.setState({
+                contactData: JSON.parse(contactData)
+            })
+        }
+    }
+    componentDidUpdate(prevProps, prevState){
+        if(JSON.stringify(prevProps.contactData) != JSON.stringify(this.state.contactData)){ 
+            //이전 값과 지금 값이 다르다면, localStorage에 지금 값을 저장하도록.
+            localStorage.contactData = JSON.stringify(this.state.contactData);
+        }
     }
 
     handleChnage(e){
