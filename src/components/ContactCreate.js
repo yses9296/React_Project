@@ -9,6 +9,7 @@ export default class ContactCreate extends Component {
         }
         this.handleChnage = this.handleChnage.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
     }    
     handleChnage(e){
         let nextState = {};
@@ -25,6 +26,11 @@ export default class ContactCreate extends Component {
             name: '',
             phone: ''
         })
+    };
+    handleKeyPress(e){
+        if(e.charCode == 13){ //charCode == 13 >> enter
+            this.handleClick();
+        }
     }
 
     render() {
@@ -32,8 +38,21 @@ export default class ContactCreate extends Component {
         <div>
             <h2>Cretate Contact</h2>
             <p>
-                <input type="text" name="name" placeholder='Name' value={this.state.name} onChange={this.handleChnage}></input>
-                <input type="text" name="phone" placeholder='Phone' value={this.state.phone} onChange={this.handleChnage}></input>
+                <input 
+                    type="text" 
+                    name="name" 
+                    placeholder='Name' 
+                    value={this.state.name} 
+                    onChange={this.handleChnage}>
+                </input>
+                <input 
+                    type="text"
+                    name="phone" 
+                    placeholder='Phone' 
+                    value={this.state.phone} 
+                    onChange={this.handleChnage} 
+                    onKeyPress={this.handleKeyPress}>
+                </input>
                 <button onClick={this.handleClick}>Create</button>
             </p>
         </div>
