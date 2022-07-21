@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+//propTypes ERROR
+
 // const propTypes = {
 //     number: PropTypes.number
 // };
