@@ -1,22 +1,26 @@
 import React, { Component, PropTypes } from 'react';
 
-const propTypes = {
-    number: PropTypes.number
-};
-const defaultProps = {
-    number: -1
-};
+// const propTypes = {
+//     number: PropTypes.number
+// };
+// const defaultProps = {
+//     number: -1
+// };
 
-class Value extends Component {
+export default class Value extends Component {
 
   constructor(props){
-    super(props)
+    super(props);
+    this.state = {
+        number: -1
+    }
   };
 
   render() {
+    console.log('Value.js')
     return (
       <div>
-        <h1>{this.props.number}</h1>
+        <h1>{this.state.number}</h1>
       </div>
     )
   }
@@ -24,6 +28,6 @@ class Value extends Component {
 
 
 
-Value.propTypes = propTypes;
-Value.defaultProps = defaultProps;
-export default Value;
+// Value.propTypes = propTypes;
+// Value.defaultProps = defaultProps;
+

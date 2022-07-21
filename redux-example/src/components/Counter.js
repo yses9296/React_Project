@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Value from './Value';
 import Control from './Control';
 
@@ -16,6 +16,7 @@ class Counter extends Component {
   };
 
   render() {
+    console.log('Counter.js')
     return (
       <div>
         <Value/>

@@ -15,6 +15,7 @@ class App extends Component {
   };
 
   render() {
+    console.log('APP.js')
     return (
       <div>
         <Counter/>

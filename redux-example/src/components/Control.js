@@ -1,18 +1,18 @@
 import React, { Component, PropTypes } from 'react';
 
-const propTypes = {
-    onPlus: PropTypes.func,
-    onSubtract: PropTypes.func,
-    onRandomizeColor: PropTypes.func,
-};
-function createWarning(funcName){
-    return () => console.warn(funcName +' is not definded');
-}
-const defaultProps = {
-    onPlus: createWarning('onPlus'),
-    onSubtract: createWarning('onSubtract'),
-    onRandomizeColor: createWarning('onRandomizeColor')
-};
+// const propTypes = {
+//     onPlus: PropTypes.func,
+//     onSubtract: PropTypes.func,
+//     onRandomizeColor:  PropTypes.func,
+// };
+// function createWarning(funcName){
+//     return () => console.warn(funcName +' is not definded');
+// }
+// const defaultProps = {
+//     onPlus: createWarning('onPlus'),
+//     onSubtract: createWarning('onSubtract'),
+//     onRandomizeColor: createWarning('onRandomizeColor')
+// };
 
 class Control extends Component {
 
@@ -21,6 +21,7 @@ class Control extends Component {
   };
 
   render() {
+    console.log('Control.js')
     return (
       <div>
         <button onCLick={this.props.onPlus}>+</button>
@@ -33,6 +34,9 @@ class Control extends Component {
 
 
 
-Control.propTypes = propTypes;
-Control.defaultProps = defaultProps;
+// Control.propTypes = propTypes;
+// Control.defaultProps = defaultProps;
+
+
+
 export default Control;
