@@ -7,6 +7,8 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import * as actions from './actions'
 
+import { Provider } from 'react-redux'
+
 const store = createStore(reducers); //store 생성
 /*
     console.log(store.getState());
@@ -22,9 +24,9 @@ const store = createStore(reducers); //store 생성
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
 );
 
 // ReactDOM.render(<App/>, document.getElementById('root'));
