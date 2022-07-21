@@ -24,9 +24,9 @@ class Control extends Component {
     console.log('Control.js')
     return (
       <div>
-        <button onCLick={this.props.onPlus}>+</button>
-        <button onCLick={this.props.onSubtract}>-</button>
-        <button onCLick={this.props.onRandomizeColor}>Randomize Color</button>
+        <button onClick={this.props.onPlus}>+</button>
+        <button onClick={this.props.onSubtract}>-</button>
+        <button onClick={this.props.onRandomizeColor}>Randomize Color</button>
       </div>
     )
   }
