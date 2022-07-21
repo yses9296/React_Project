@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+// import React, { Component, PropTypes } from 'react';
 
 //propTypes ERROR
 
@@ -24,8 +25,6 @@ export default class Value extends Component {
     )
   }
 }
-
-
 
 // Value.propTypes = propTypes;
 Value.defaultProps = defaultProps;
