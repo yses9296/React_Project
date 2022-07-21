@@ -14,7 +14,7 @@ export default function counter(state = initialState, action){
             return { ...state, number: state.number + 1} //...state: 복제 값
         case types.DECREMENT:
             return { ...state, number: state.number - 1}
+        default:
+            return state;
     }
-
-    return state;
 }
