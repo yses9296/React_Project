@@ -5,12 +5,19 @@ import App from './components/App';
 
 import { createStore } from 'redux';
 import reducers from './reducers';
+import * as actions from './actions'
 
 const store = createStore(reducers); //store 생성
+/*
+    console.log(store.getState());
+    const unSubscribe = store.subscribe( () => console.log( store.getState() ) )
 
-console.log(store.getState());
-store.subscribe( () => console.log( store.getState() ) )
+    store.dispatch(actions.increment());
+    store.dispatch(actions.decrement());
+    store.dispatch(actions.setColor([200,200,200]));
 
+    unSubscribe(); //listener switch
+*/
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
