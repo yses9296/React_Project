@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 router.get('/:id', function(req, res) {
-    res.send('Received a GET request, param:' + req.params.id);
+    res.send('Received a GET request, param: ' + req.params.id);
 });
 
 router.post('/', function(req, res) {
@@ -15,7 +15,7 @@ router.post('/', function(req, res) {
     })
     // res.send('Received a POST request');
 });
-
+  
 router.put('/', function(req, res) {
     // res.send('Received a PUT request');
     res.status(400).json({ message: 'Hey, You. Bad Request!'})

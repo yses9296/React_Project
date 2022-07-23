@@ -14,9 +14,12 @@ var bodyParser =  require('body-parser');
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
-app.get('/', function(req, res){
-    res.send('Hello World');
-})
+//코드 우선권.
+app.use('/', express.static('public'));//html 접근
+
+// app.get('/', function(req, res){
+//     res.send('Hello World');
+// })
 
 app.use('/user', user);
 
