@@ -7,12 +7,17 @@ router.get('/:id', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-    res.send('Received a POST request');
-    res.json({ success: true })
+    console.log(JSON.stringify(req.body, null, 2))
+    
+    res.json({ 
+        success: true,
+        user: req.body.username
+    })
+    // res.send('Received a POST request');
 });
 
 router.put('/', function(req, res) {
-    res.send('Received a PUT request');
+    // res.send('Received a PUT request');
     res.status(400).json({ message: 'Hey, You. Bad Request!'})
 });
 
