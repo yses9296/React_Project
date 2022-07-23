@@ -1,9 +1,8 @@
 var express = require('express');
 var app = express();
-
 var user = require('./routes/user');
-
 var morgan = require('morgan');
+var bodyParser =  require('body-parser');
 
 // var myLogger = function(req, res, next){
 //     console.log(req.url);
@@ -13,6 +12,7 @@ var morgan = require('morgan');
 // app.use(myLogger);
 
 app.use(morgan('dev'));
+app.use(bodyParser.json());
 
 app.get('/', function(req, res){
     res.send('Hello World');
